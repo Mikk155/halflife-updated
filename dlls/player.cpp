@@ -2927,8 +2927,8 @@ void CBasePlayer::Spawn()
 		}};
 
 	pev->classname = MAKE_STRING("player");
-	pev->health = 100;
-	pev->armorvalue = 0;
+	pev->health = pev->max_health = 1;
+	pev->armorvalue = pev->armortype = 0;
 	pev->takedamage = DAMAGE_AIM;
 	pev->solid = SOLID_SLIDEBOX;
 	pev->movetype = MOVETYPE_WALK;
