@@ -458,6 +458,8 @@ cvar_t sv_pushable_fixed_tick_fudge = {"sv_pushable_fixed_tick_fudge", "15"};
 
 cvar_t sv_busters = {"sv_busters", "0", FCVAR_SERVER};
 
+cvar_t sv_manager_write_ratetime = {"sv_manager_write_ratetime", "10", FCVAR_SERVER};
+
 static bool SV_InitServer()
 {
 	if (!FileSystem_LoadFileSystem())
@@ -930,6 +932,8 @@ void GameDLLInit()
 	// END REGISTER CVARS FOR SKILL LEVEL STUFF
 
 	CVAR_REGISTER(&sv_pushable_fixed_tick_fudge);
+
+	CVAR_REGISTER(&sv_manager_write_ratetime);
 
 	InitMapLoadingUtils();
 

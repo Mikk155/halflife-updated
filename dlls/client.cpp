@@ -883,13 +883,19 @@ void InitMapLoadingUtils()
 
 static bool g_LastAllowBunnyHoppingState = false;
 
+#include "hl-server-manager.h"
+
 //
 // GLOBALS ASSUMED SET:  g_ulFrameCount
 //
 void StartFrame()
 {
 	if (g_pGameRules)
+	{
 		g_pGameRules->Think();
+
+    	hl_ServerManager.Think();
+	}
 
 	if (g_fGameOver)
 		return;
